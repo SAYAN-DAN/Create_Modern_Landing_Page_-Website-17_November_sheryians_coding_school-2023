@@ -1,4 +1,3 @@
-// Shery.imageEffect("#back", { style: 4, debug: true });
 Shery.imageEffect("#back", {
   style: 5,
   config: {
@@ -26,36 +25,37 @@ Shery.imageEffect("#back", {
   gooey: true,
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  var elems = document.querySelectorAll(".elem");
 
-  elems.forEach(function (elem) {
+var elems = document.querySelectorAll(".elem")
+
+elems.forEach (function (elem) {
+
     var h1s = elem.querySelectorAll("h1");
     var index = 0;
-    var animating = false;
-
+    var animating = false
+    
     document.querySelector("#main").addEventListener("click", function () {
-      if (!animating) {
-        animating = true;
-
+       if(!animating) {
+         animating = true
         gsap.to(h1s[index], {
-          top: "-=100%",
-          ease: Expo.easeInOut,
-          duration: 1,
-          onComplete: function () {
-            gsap.set(this.target, { top: "100%" });
-            animating = false;
-          },
-        });
+            top: "-=100%",
+            ease: Expo.easeInout,
+            duration: 1,
+            onComplete: function () {
+              gsap.set(this._targets[0], { top: "100%" });
+              animating = false
+            },
+          });
+        
+          index === h1s.length - 1 ? (index = 0) : index++;
+          gsap.to(h1s[index], {
+            top: "-=100%",
+            ease: Expo.easeInout,
+            duration: 1,
+          });
+       }
+      });
+})
 
-        index === h1s.length - 1 ? (index = 0) : index++;
 
-        gsap.to(h1s[index], {
-          top: "-=100%",
-          ease: Expo.easeInOut,
-          duration: 1,
-        });
-      }
-    });
-  });
-});
+  
