@@ -2,10 +2,20 @@
   font-family: gilroy1;
   src: url(./fonts/Gilroy-Bold.ttf);
 }
+@font-face {
+  font-family: gilroy2;
+  src: url(./fonts/Gilroy-BlackItalic.ttf);
+}
+
+@font-face {
+  font-family: kajiro;
+  src: url(./fonts/Kajiro\ Bold.ttf);
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 body,
 html {
@@ -21,10 +31,16 @@ html {
 .back {
   width: 100%;
   height: 100vh;
-  background-color: black;
+  /* background-color: black; */
 }
 
+.back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .top {
+  pointer-events: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -37,14 +53,15 @@ html {
   height: 100vh;
   width: 80%;
   max-width: 1920px;
-  border: 1px solid rgb(246, 3, 3);
+  /* border: 1px solid rgb(246, 3, 3); */
   margin: 0 auto;
+  position: relative;
 }
 
 .nav {
   width: 100%;
   /* height: 100px; */
-  border-bottom: 1px solid blue;
+  /* border-bottom: 1px solid blue; */
   padding: 20px 0;
   display: flex;
   align-content: center;
@@ -65,6 +82,7 @@ html {
 }
 
 .nleft a {
+  pointer-events: all;
   text-decoration: none;
   color: #fff;
   text-transform: uppercase;
@@ -80,6 +98,7 @@ html {
 }
 
 .nright a {
+  pointer-events: all;
   text-decoration: none;
   text-transform: uppercase;
   color: #fff;
@@ -87,7 +106,74 @@ html {
 
 .hero {
   width: 100%;
-  height: 100px;
-  background-color: red;
+  /* height: 100px; */
+  /* background-color: wheat; */
   position: absolute;
+  top: 50%;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translate(0 , -50%);
+}
+
+.heroleft .elem {
+  height: 10vw;
+  /* background: green; */
+  overflow: hidden;
+}
+.heroleft {
+  min-width: 50%;
+  /* background-color: green; */
+  /* height: 100px; */
+}
+
+.heroleft h1 {
+  font-family: kajiro;
+  color: #ffffff;
+  font-size: 11vw;
+  font-weight: 100;
+
+}
+  .heroright {
+  width: 20%;
+  display: flex;
+  /* background-color: red; */
+  /* height: 100px; */
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+button {
+  font-family: kajiro;
+  pointer-events: all;
+  padding: .6vw 4vw;
+  cursor: pointer;
+  font-size: 3vw;
+  font-weight: 100;
+  margin-top: 4vw;
+}
+
+.heroright p {
+  color: #ffffff;
+  font-family: gilroy2;
+  text-align: right;
+  /* font-weight: 100; */
+}
+
+.heroright .box {
+  width: 100%;
+  height: 200px;
+  margin-top: 1.5vw;
+  margin-bottom: 1.5vw;
+  background-color: #fff;
+}
+
+.heroright :nth-child(4) {
+  margin-top: 4.3vw;
+}
+
+.heroright .box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
