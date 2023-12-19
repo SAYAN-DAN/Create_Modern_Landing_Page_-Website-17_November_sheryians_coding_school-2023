@@ -120,7 +120,7 @@ html {
   position: relative;
   height: 10vw;
   /* background: green; */
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 .heroleft {
   min-width: 50%;
